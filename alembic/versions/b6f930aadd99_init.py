@@ -1,8 +1,8 @@
 """Init
 
-Revision ID: 7c1f5c328830
+Revision ID: b6f930aadd99
 Revises: 
-Create Date: 2022-12-30 19:34:00.763762
+Create Date: 2022-12-30 19:47:13.705311
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '7c1f5c328830'
+revision = 'b6f930aadd99'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,14 +32,14 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('student_name', sa.String(length=150), nullable=False),
     sa.Column('id_group', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['id_group'], ['groups.id'], ),
+    sa.ForeignKeyConstraint(['id_group'], ['groups.id'], ondelete='SET NULL'),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('subjects',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('subject_name', sa.String(length=150), nullable=False),
     sa.Column('id_teacher', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['id_teacher'], ['teachers.id'], ),
+    sa.ForeignKeyConstraint(['id_teacher'], ['teachers.id'], ondelete='SET NULL'),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('gradebook',

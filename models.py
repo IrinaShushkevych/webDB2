@@ -19,7 +19,7 @@ class Students(Base):
     __tablename__ = "students"
     id = Column(Integer, primary_key=True)
     student_name = Column(String(150), nullable=False)
-    id_group = Column(Integer, ForeignKey(Groups.id))
+    id_group = Column(Integer, ForeignKey(Groups.id, ondelete="SET NULL"), nullable=True)
     grade = relationship('Gradebook', backref='student', cascade='all, delete')
 
 class Teachers(Base):
@@ -32,7 +32,7 @@ class Subjects(Base):
     __tablename__ = "subjects"
     id = Column(Integer, primary_key=True)
     subject_name = Column(String(150), nullable=False)
-    id_teacher = Column(Integer, ForeignKey(Teachers.id))
+    id_teacher = Column(Integer, ForeignKey(Teachers.id, ondelete="SET NULL"), nullable=True)
     grade = relationship('Gradebook', backref='subject', cascade='all, delete')
 
 class Gradebook(Base):

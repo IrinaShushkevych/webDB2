@@ -41,6 +41,3 @@ class Gradebook(Base):
     id_subject = Column(Integer, ForeignKey(Subjects.id, ondelete='CASCADE'), primary_key=True)
     grade = Column(Integer, default=0)
     createdAt = Column(DATE, default=datetime.now().strftime('%Y-%m-%d'), primary_key=True)
-
-Base.metadata.create_all(engine)
-Base.metadata.bind = engine

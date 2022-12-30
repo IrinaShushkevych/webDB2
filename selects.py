@@ -177,7 +177,6 @@ def select_12(group, subject):
     return res_to_dict(res)
 
 if __name__ == "__main__":
-    print('--- Main ---')
     # select_1()
     # select_2(6)
     # select_3(3)

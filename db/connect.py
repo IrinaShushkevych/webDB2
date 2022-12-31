@@ -1,3 +1,4 @@
+# docker run --name univer --restart always -p 5401:5432 -e POSTGRES_PASSWORD=univer -e POSTGRES_DB=univer -d postgres
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 

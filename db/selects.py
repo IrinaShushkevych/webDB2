@@ -1,7 +1,6 @@
-from sqlalchemy import select, func, and_
+from sqlalchemy import func, and_
 
-from models import Groups, Gradebook, Students, Subjects, Teachers
-from connect import session
+from db import session, Groups, Gradebook, Students, Subjects
 
 def res_to_dict(res):
     return [r._asdict() for r in res]
@@ -175,17 +174,3 @@ def select_12(group, subject):
     res = sql.all()
     print_res(res_to_dict(res))
     return res_to_dict(res)
-
-if __name__ == "__main__":
-    # select_1()
-    # select_2(6)
-    # select_3(3)
-    # select_4()
-    # select_5(1)
-    # select_6(1)
-    # select_7(1, 1)
-    # select_8(3)
-    # select_9(1)
-    # select_10(1, 2)
-    # select_11(1, 2)
-    select_12(1, 2)

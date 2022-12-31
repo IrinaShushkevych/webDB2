@@ -2,8 +2,7 @@ from datetime import datetime, timedelta
 import faker
 from random import randint
 
-from connect import session
-from models import Groups, Gradebook, Students, Subjects, Teachers
+from db import session, Groups, Gradebook, Students, Subjects, Teachers
 
 def create_data_DB():
         count_group = 3

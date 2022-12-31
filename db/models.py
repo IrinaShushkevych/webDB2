@@ -1,11 +1,9 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy.sql.schema import ForeignKey, Table
+from sqlalchemy.sql.schema import ForeignKey
 from sqlalchemy.sql.sqltypes import DATE
 from datetime import datetime
-
-from connect import engine
 
 Base = declarative_base()
 

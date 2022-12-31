@@ -1,10 +1,14 @@
-# docker run --name univer --restart always -p 5401:5432 -e POSTGRES_PASSWORD=univer -e POSTGRES_DB=univer -d postgres
-from . import connect
 
-
+from classes import Helper
 
 def main():
-    pass
+    helper = Helper()
+    while True:
+        print('==============================================================')
+        print('Use command "help" to get list of command')
+        cmd = input('command: ').lower()
+        print('==============================================================')
+        helper.cmd(cmd)
 
 if __name__ == '__main__':
     main()

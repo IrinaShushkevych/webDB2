@@ -19,7 +19,25 @@ class Helper:
             '11': {'func': selects.select_11, 'params': ['id student: ', 'id teacher: ']},
             '12': {'func': selects.select_12, 'params': ['id group: ', 'id subject: ']},
             'i-teacher': {'func': update_data.insert_teacher, 'params': ['Name teacher: ']},
-            'U-teacher': {'func': update_data.update_teacher, 'params': ['id teacher: ', 'New name teacher: ']}
+            'u-teacher': {'func': update_data.update_teacher, 'params': ['id teacher: ', 'New name teacher: ']},
+            'd-teacher': {'func': update_data.delete_teacher, 'params': ['id teacher: ']},
+            'l-teacher': {'func': update_data.list_teacher, 'params': []},
+            'i-subject': {'func': update_data.insert_subject, 'params': ['Name subject: ', 'id teacher: ']},
+            'u-subject': {'func': update_data.update_subject, 'params': ['id subject: ', 'New name subject: ', 'id_teacher: ']},
+            'd-subject': {'func': update_data.delete_subject, 'params': ['id subject: ']},
+            'l-subject': {'func': update_data.list_subject, 'params': []},
+            'i-group': {'func': update_data.insert_group, 'params': ['Name group: ']},
+            'u-group': {'func': update_data.update_group, 'params': ['id group: ', 'New name group: ']},
+            'd-group': {'func': update_data.delete_group, 'params': ['id group: ']},
+            'l-group': {'func': update_data.list_group, 'params': []},
+            'i-student': {'func': update_data.insert_student, 'params': ['Name student: ', 'id group: ']},
+            'u-student': {'func': update_data.update_student, 'params': ['id student: ', 'New name student: ', 'id_group: ']},
+            'd-student': {'func': update_data.delete_student, 'params': ['id student: ']},
+            'l-student': {'func': update_data.list_student, 'params': []},
+            'i-grade': {'func': update_data.insert_grade, 'params': ['id student: ', 'id subject: ','grade: ','date: ']},
+            'u-grade': {'func': update_data.update_grade, 'params': ['id student: ', 'id subject: ','date: ', 'New grade: ']},
+            'd-grade': {'func': update_data.delete_grade, 'params': ['id student: ', 'id subject: ','date: ']},
+            'l-grade': {'func': update_data.list_grade, 'params': []}
         }
 
     def func_exit(self):
@@ -53,9 +71,6 @@ class Helper:
             return
         args = []
         for el in self.cmd_list[cmd]['params']: 
-            while True:
-                param = input(el)
-                if param:
-                    args.append(param)
-                    break
+            param = input(el)
+            args.append(param)
         self.cmd_list[cmd]['func'](*args)

@@ -1,6 +1,6 @@
 from db import selects, update_data
 
-class Helper:
+class ServiceBot:
     def __init__(self):
         
         self.cmd_list = {
@@ -61,8 +61,8 @@ class Helper:
         print(' i-group (u-group, d-group) - Додати (Змінити, Видалити) групу ')
         print(' i-student (u-student, d-student) - Додати (Змінити, Видалити) студента ')
         print(' i-subject (u-subject, d-subject) - Додати (Змінити, Видалити) предмет ')
-        print('i-grade (u-grade, d-grade) - Додати (Змінити, Видалити) оцінку ')
-        print('help - Список команд')
+        print(' i-grade (u-grade, d-grade) - Додати (Змінити, Видалити) оцінку ')
+        print(' help - Список команд')
         print(' exit - Вихід')
 
     def cmd(self, cmd):

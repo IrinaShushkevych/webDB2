@@ -1,14 +1,14 @@
 
-from classes import Helper
+from classes import ServiceBot
 
 def main():
-    helper = Helper()
+    service_bot = ServiceBot()
     while True:
         print('==============================================================')
         print('Use command "help" to get list of command')
         cmd = input('command: ').lower()
         print('==============================================================')
-        helper.cmd(cmd)
+        service_bot.cmd(cmd)
 
 if __name__ == '__main__':
     main()
